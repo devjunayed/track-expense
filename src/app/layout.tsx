@@ -47,7 +47,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         "font-sans",
         ibmPlexSans.variable,
         sourceSans3Heading.variable,
-        
       )}
       suppressHydrationWarning
     >
@@ -59,7 +58,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           disableTransitionOnChange
         >
           <Navbar />
-          {children}
+          <div className="w-full">
+            <main className="container w-full px-4 mx-auto">{children}</main>
+          </div>
         </ThemeProvider>
       </body>
     </html>

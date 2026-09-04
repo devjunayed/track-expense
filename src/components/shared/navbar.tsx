@@ -45,7 +45,7 @@ export function Navbar() {
         {/* Brand Logo */}
         <div className="flex items-center gap-6">
           <Link
-            href="/dashboard"
+            href="/"
             className="flex items-center gap-2 font-bold text-xl tracking-tight"
           >
             <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary text-primary-foreground">
@@ -101,11 +101,14 @@ export function Navbar() {
           </div>
 
           <div>
-            <Button>Login</Button>
-            </div>
+            <Link className="cursor-pointer" href="/login">
+              <Button className="cursor-pointer">Login</Button>
+            </Link>
+          </div>
 
           {/* User Profile Dropdown */}
-          <DropdownMenu>
+          
+          {/* <DropdownMenu>
             <DropdownMenuTrigger
               render={
                 <Button
@@ -123,17 +126,16 @@ export function Navbar() {
             />
 
             <DropdownMenuContent className="w-56" align="end">
-                <DropdownMenuGroup>
-
-              <DropdownMenuLabel className="font-normal">
-                <div className="flex flex-col space-y-1">
-                  <p className="text-sm font-medium leading-none">John Doe</p>
-                  <p className="text-xs leading-none text-muted-foreground">
-                    john@example.com
-                  </p>
-                </div>
-              </DropdownMenuLabel>
-                </DropdownMenuGroup>
+              <DropdownMenuGroup>
+                <DropdownMenuLabel className="font-normal">
+                  <div className="flex flex-col space-y-1">
+                    <p className="text-sm font-medium leading-none">John Doe</p>
+                    <p className="text-xs leading-none text-muted-foreground">
+                      john@example.com
+                    </p>
+                  </div>
+                </DropdownMenuLabel>
+              </DropdownMenuGroup>
               <DropdownMenuSeparator />
               <DropdownMenuGroup>
                 <DropdownMenuItem className="cursor-pointer">
@@ -151,7 +153,7 @@ export function Navbar() {
                 <span>Log out</span>
               </DropdownMenuItem>
             </DropdownMenuContent>
-          </DropdownMenu>
+          </DropdownMenu> */}
         </div>
       </div>
     </header>
