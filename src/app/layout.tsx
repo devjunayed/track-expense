@@ -7,8 +7,8 @@ import {
 } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
-import { ThemeProvider } from "../provider/theme-provider";
 import { Navbar } from "@/components/shared/navbar";
+import TrackExpenseProvider from "@/provider/track-expense-provider";
 
 const sourceSans3Heading = Source_Sans_3({
   subsets: ["latin"],
@@ -51,17 +51,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
+        <TrackExpenseProvider>
           <Navbar />
           <div className="w-full">
             <main className="container w-full px-4 mx-auto">{children}</main>
           </div>
-        </ThemeProvider>
+        </TrackExpenseProvider>
       </body>
     </html>
   );
